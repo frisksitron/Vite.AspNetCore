@@ -76,9 +76,6 @@ public sealed class ViteManifest : IViteManifest
 				// Iterate through the chunks.
 				foreach (var chunk in this._chunks)
 				{
-					// Add the base path to the key.
-					var key = CombineUri(this._base, chunk.Key);
-
 					// Add the base path to the value.
 					var value = chunk.Value with
 					{
@@ -93,7 +90,7 @@ public sealed class ViteManifest : IViteManifest
 					};
 
 					// Add the chunk to the dictionary.
-					chunks.Add(key, value);
+					chunks.Add(chunk.Key, value);
 				}
 
 				// Replace the chunks dictionary.

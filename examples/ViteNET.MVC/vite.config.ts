@@ -60,10 +60,9 @@ export default defineConfig(async () => {
 		root: 'Assets',
 		publicDir: 'public',
 		build: {
-
 			manifest: appsettings.Vite.Manifest,
 			emptyOutDir: true,
-			outDir: '../wwwroot',
+			outDir: '../wwwroot/build',
 			assetsDir: '',
 			rollupOptions: {
 				input: 'Assets/main.ts',
